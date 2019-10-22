@@ -55,29 +55,33 @@ namespace ClassWork1210
 
         static int GetInt(string invite)
         {
-            int x;
-            Console.WriteLine(invite);
-            string strInput = Console.ReadLine();
-            while (!int.TryParse(strInput, out x))
+            int x = 0;
+            string strInput = "";
+            do
             {
-                Console.WriteLine("Ошибка! Введено не целое число!");
+                Console.WriteLine(invite);
                 strInput = Console.ReadLine();
-                int.TryParse(strInput, out x);
-            }
+                if(!int.TryParse(strInput, out x))
+                {
+                    Console.WriteLine("Ошибка! Введено не целое число!");
+                }
+            } while (!int.TryParse(strInput, out x));
             return x;
         }
 
         static double GetDouble(string invite)
         {
-            double x;
-            Console.WriteLine(invite);
-            string strInput = Console.ReadLine();
-            while (!Double.TryParse(strInput, out x))
+            double x = 0;
+            string strInput = "";
+            do
             {
-                Console.WriteLine("Ошибка! Введено не действительное число!");
+                Console.WriteLine(invite);
                 strInput = Console.ReadLine();
-                Double.TryParse(strInput, out x);
-            }
+                if (!Double.TryParse(strInput, out x))
+                {
+                    Console.WriteLine("Ошибка! Введено не целое число!");
+                }
+            } while (!Double.TryParse(strInput, out x));
             return x;
         }
 
