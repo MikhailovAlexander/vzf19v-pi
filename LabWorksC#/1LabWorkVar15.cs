@@ -79,7 +79,7 @@ namespace ClassWork1210
                 strInput = Console.ReadLine();
                 if (!Double.TryParse(strInput, out x))
                 {
-                    Console.WriteLine("Ошибка! Введено не целое число!");
+                    Console.WriteLine("Ошибка! Введено не действительное число!");
                 }
             } while (!Double.TryParse(strInput, out x));
             return x;
