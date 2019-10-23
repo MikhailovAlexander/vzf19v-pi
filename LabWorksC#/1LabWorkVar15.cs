@@ -14,25 +14,19 @@ namespace ClassWork1210
             Task2();
             Task3();
         }
-
         
         static void Task1()
         {
             Console.WriteLine("Задание №1\n");
-            Calculations();
-            string answer = "Y";
-            while (answer == "Y")
+            string answer = "";
+            do
             {
-                Console.WriteLine("\nВы хотите продолжить выполнение задания 1? Введите Y/N");
+                Calculations();
+                Console.WriteLine(
+                    "\nВы хотите продолжить выполнение задания 1?"
+                    +"\nДля выхода введите N, для продолжения любой другой символ");
                 answer = Console.ReadLine();
-                if (answer == "Y") Calculations();
-                else if (answer == "N") break;
-                else
-                {
-                    Console.WriteLine("Введено некорректное значение ответа!");
-                    answer = "Y";
-                }
-            }
+            } while (answer != "N");
         }
 
         static void Calculations()
@@ -51,38 +45,6 @@ namespace ClassWork1210
             double x = GetDouble("Введите вещественное число Х");
             double resultX = 1 + x * Math.Pow(Math.Cos(x), 2) + Math.Pow(Math.Sin(x), 3);
             Console.WriteLine($"x={x}, выражение 1 + xcos^2(x) + sin^3(x) = {resultX}");
-        }
-
-        static int GetInt(string invite)
-        {
-            int x = 0;
-            string strInput = "";
-            do
-            {
-                Console.WriteLine(invite);
-                strInput = Console.ReadLine();
-                if(!int.TryParse(strInput, out x))
-                {
-                    Console.WriteLine("Ошибка! Введено не целое число!");
-                }
-            } while (!int.TryParse(strInput, out x));
-            return x;
-        }
-
-        static double GetDouble(string invite)
-        {
-            double x = 0;
-            string strInput = "";
-            do
-            {
-                Console.WriteLine(invite);
-                strInput = Console.ReadLine();
-                if (!Double.TryParse(strInput, out x))
-                {
-                    Console.WriteLine("Ошибка! Введено не действительное число!");
-                }
-            } while (!Double.TryParse(strInput, out x));
-            return x;
         }
 
         static void Task2()
@@ -113,23 +75,58 @@ namespace ClassWork1210
                 "Точка, с указанными координатами входит в заданную область" :
                 "Точка, с указанными координатами не входит в заданную область");
         }
-
-
+        
         static void Task3()
         {
             Console.WriteLine("\nЗадание №3\n");
             float a = 10f;
             float b = 0.01f;
-            float resultF = ((float)Math.Pow((a - b), 4) - ((float)Math.Pow(a, 4) - 4 * (float)Math.Pow(a, 3) * b)) /
-                           (6 * (float)Math.Pow(a, 2) * (float)Math.Pow(b, 2) - 4 * a * (float)Math.Pow(b, 3) + (float)Math.Pow(b, 4));
+            float resultF = 
+                ((float)Math.Pow((a-b),4)-((float)Math.Pow(a,4)-4*(float)Math.Pow(a,3)*b))
+                /(6*(float)Math.Pow(a,2)*(float)Math.Pow(b,2)-4*a*(float)Math.Pow(b,3)
+                +(float)Math.Pow(b,4));
 
             double aD = 10;
             double bD = 0.01;
-            double resultD = (Math.Pow((aD - bD), 4) - (Math.Pow(aD, 4) - 4 * Math.Pow(aD, 3) * bD)) /
-                           (6 * Math.Pow(aD, 2) * Math.Pow(bD, 2) - 4 * aD * Math.Pow(bD, 3) + Math.Pow(bD, 4));
+            double resultD = 
+                (Math.Pow((aD-bD),4)-(Math.Pow(aD,4)-4*Math.Pow(aD,3)* bD))
+                /(6*Math.Pow(aD,2)*Math.Pow(bD,2)-4*aD*Math.Pow(bD,3)+Math.Pow(bD,4));
 
-            Console.WriteLine($"Вычисления с типом float, результат: {resultF}\nВычисления с типом double, результат: {resultD}");
+            Console.WriteLine($"Вычисления с типом float, результат: {resultF}"
+                +$"\nВычисления с типом double, результат: {resultD}");
             Console.ReadKey();
+        }
+
+        static int GetInt(string invite)
+        {
+            int x = 0;
+            string strInput = "";
+            do
+            {
+                Console.WriteLine(invite);
+                strInput = Console.ReadLine();
+                if (!int.TryParse(strInput, out x))
+                {
+                    Console.WriteLine("Ошибка! Введено не целое число!");
+                }
+            } while (!int.TryParse(strInput, out x));
+            return x;
+        }
+
+        static double GetDouble(string invite)
+        {
+            double x = 0;
+            string strInput = "";
+            do
+            {
+                Console.WriteLine(invite);
+                strInput = Console.ReadLine();
+                if (!Double.TryParse(strInput, out x))
+                {
+                    Console.WriteLine("Ошибка! Введено не действительное число!");
+                }
+            } while (!Double.TryParse(strInput, out x));
+            return x;
         }
     }
 }
