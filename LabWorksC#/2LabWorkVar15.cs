@@ -87,6 +87,7 @@ namespace ClassWork1610
 
         static int GetInt(string invite, int min = int.MinValue,
             int max = int.MaxValue)
+		//Получение целого числа в заданом диапазоне с консоли
         {
             int x=0;
             bool isChecked = false;

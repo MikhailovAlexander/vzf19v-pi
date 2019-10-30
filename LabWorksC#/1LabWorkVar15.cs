@@ -30,6 +30,7 @@ namespace ClassWork1210
         }
 
         static void Calculations()
+		//Вычисления для задания 1
         {
             int m = GetInt("Введите целое число m");
             int n = GetInt("Введите целое число n");
@@ -67,6 +68,7 @@ namespace ClassWork1210
         }
 
         static void CheckDot()
+		//Определение вхождения точки в заданную область для задания 2
         {
             double x = GetDouble("Введите значение координаты Х");
             double y = GetDouble("Введите значение координаты Y");
@@ -98,6 +100,7 @@ namespace ClassWork1210
         }
 
         static int GetInt(string invite)
+		//Получение целого числа с консоли
         {
             int x = 0;
             string strInput = "";
@@ -114,6 +117,7 @@ namespace ClassWork1210
         }
 
         static double GetDouble(string invite)
+		//Получение действительного числа с консоли
         {
             double x = 0;
             string strInput = "";
