@@ -26,6 +26,7 @@ namespace ClassWork1610
             quantity = GetInt(
                 "Введите положительное количество элементов последовательности", min: 1);
             while (firstElement == 0)
+			//Первый элемент ненулевой, для возможности деления на него
             {
                 firstElement = GetInt("Введите ненулевое значение элемента №1");
             }
@@ -43,7 +44,7 @@ namespace ClassWork1610
         static void Task2_20()
         {
             Console.WriteLine("Второе задание. Задача №20." +
-                "\nПодсчет сумм элементов, с четными номерами\n");
+                "\nПодсчет суммы элементов, с четными номерами\n");
             int currentElement, summ, n;
             summ = 0;
             n = 1;
@@ -76,6 +77,7 @@ namespace ClassWork1610
             currentNumber = 1;
             previousNumber = 1;
             Console.Write("[1], [1]");
+			//Вывод 1-го и 2-го элементов последовательности
             for (int i = 3; i <= quantity; i++)
             {
                 int tmp = currentNumber;

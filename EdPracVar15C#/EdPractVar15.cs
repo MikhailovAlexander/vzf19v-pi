@@ -61,6 +61,7 @@ namespace ClassWork1210
         }
 
         static double F(double x)
+		//Вычисление значения функции
         {
             return (4 + x * x)*(Math.Pow(Math.E, x) - Math.Pow(Math.E, -x)) - 18;
         }
@@ -89,6 +90,7 @@ namespace ClassWork1210
         }
 
         static void PrintMatrix(int[,] A)
+		//Вывод матрицы в консоль
         {
             if(A.GetLength(0) == 0 || A.GetLength(1) == 0)
             {
