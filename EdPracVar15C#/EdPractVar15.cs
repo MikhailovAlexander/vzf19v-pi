@@ -71,7 +71,11 @@ namespace ClassWork1210
             Console.WriteLine("Задание 393в.\nВывести последовательность из n чисел");
             int n = GetInt(
                 "Введите целочисленное неотрицателное значение порядка матрицы: ", min:1);
-            int[,] A = GetIntRandSquareMatrix(n, -10, 100);
+            int[,] A = new int[n,n];
+			string answer = Console.ReadLine("Чтобы ввести элементы вручную введите 1,"
+				" для случайной генерации введите любой другой символ");
+			if(answer = '1') A = GetIntSquareMatrix(n);
+			else A = GetIntRandSquareMatrix(n, -10, 100);
             PrintMatrix(A);
             int b = 0;
             bool rawHasNegative = false;
@@ -123,6 +127,21 @@ namespace ClassWork1210
             {
                 for (int j = 0; j < n; j++)
                     A[i, j] = random.Next(min, max);
+            }
+            return A;
+        }
+		
+		static int[,] GetIntSquareMatrix(int n)
+        //Получение квадратной матрицы порядка n
+        {
+            if(n < 0) throw new Exception("Размер матрицы не может быть отрицательным");
+            if (n == 0) return new int[0, 0];
+            int[,] A = new int[n, n];
+            for (int i = 0; i < n; i++)
+            {
+				Сonsole.WriteLine($"Строка №{i + 1}");
+                for (int j = 0; j < n; j++)
+                    A[i, j] = GetInt("Введите целочисленное значение элемента №{j + 1}");
             }
             return A;
         }
