@@ -12,13 +12,12 @@ namespace ClassWork1210
 
             func = EdPracTask2;
             TaskLoop(func, "Задание 2", "Приближенное вычисление корня");
-
+            
             func = EdPracTask3;
             TaskLoop(func, "Задание 3", "Работа с матрицами");
-
+            
             func = EdPracTask4;
             TaskLoop(func, "Задание 4", "Рекурсия");
-
         }
 
         static void EdPracTask1()
@@ -38,8 +37,7 @@ namespace ClassWork1210
             Console.WriteLine(
                 $"Точка с указанными координатами{answer} входит в заданную область, u = {u}");
         }
-
-
+        
         static void EdPracTask2()
         {
             string f = "(4 + x^2)(e^x - e^-x) = 18";
@@ -49,33 +47,33 @@ namespace ClassWork1210
             double x2 = 1.3;
             double eps = GetDouble(
                 "Введите действительное положительное значение точности <= 1: ",
-                min:0, max:1);
+                min: 0, max: 1);
             do
             {
                 double tmp = x2;
                 x2 = (x1 - ((x2 - x1) * F(x1)) / (F(x2) - F(x1)));
                 x1 = tmp;
-                Console.WriteLine(x2);
             } while (Math.Abs(x2 - x1) > eps);
             Console.WriteLine($"Корень уравнения {f} вычисленный с точностью {eps} = {x2}");
         }
 
         static double F(double x)
-		//Вычисление значения функции
+        //Вычисление значения функции
         {
-            return (4 + x * x)*(Math.Pow(Math.E, x) - Math.Pow(Math.E, -x)) - 18;
+            return (4 + x * x) * (Math.Pow(Math.E, x) - Math.Pow(Math.E, -x)) - 18;
         }
 
         static void EdPracTask3()
         {
             Console.WriteLine("Задание 393в.\nВывести последовательность из n чисел");
             int n = GetInt(
-                "Введите целочисленное неотрицателное значение порядка матрицы: ", min:1);
-            int[,] A = new int[n,n];
-			string answer = Console.ReadLine("Чтобы ввести элементы вручную введите 1,"
-				" для случайной генерации введите любой другой символ");
-			if(answer = '1') A = GetIntSquareMatrix(n);
-			else A = GetIntRandSquareMatrix(n, -10, 100);
+                "Введите целочисленное неотрицателное значение порядка матрицы: ", min: 0);
+            int[,] A = new int[n, n];
+            Console.WriteLine("Чтобы ввести элементы вручную введите 1,"
+               + " для случайной генерации введите любой другой символ");
+            string answer = Console.ReadLine();
+            if (answer == "1") A = GetIntSquareMatrix(n);
+            else A = GetIntRandSquareMatrix(n, -10, 100);
             PrintMatrix(A);
             int b = 0;
             bool rawHasNegative = false;
@@ -86,22 +84,22 @@ namespace ClassWork1210
                 for (int j = 0; j < A.GetLength(1); j++)
                 {
                     if (rawHasNegative) b += A[i, j];
-                    else if(A[i, j] < 0) rawHasNegative = true;
+                    else if (A[i, j] < 0) rawHasNegative = true;
                 }
                 if (!rawHasNegative) b = 100;
-                Console.WriteLine($"b{i} = {b}");
+                Console.WriteLine($"b{i + 1} = {b}");
             }
         }
 
         static void PrintMatrix(int[,] A)
-		//Вывод матрицы в консоль
+        //Вывод матрицы в консоль
         {
-            if(A.GetLength(0) == 0 || A.GetLength(1) == 0)
+            if (A.GetLength(0) == 0 || A.GetLength(1) == 0)
             {
                 Console.WriteLine("Одна из размерности массива нулевая!");
                 return;
             }
-            if(A.GetLength(0) == A.GetLength(1))
+            if (A.GetLength(0) == A.GetLength(1))
                 Console.WriteLine($"Квадратная матрица порядка {A.GetLength(0)}");
             for (int i = 0; i < A.GetLength(0); i++)
             {
@@ -117,9 +115,9 @@ namespace ClassWork1210
         //Получение квадратной матрицы порядка n, со случайными целыми
         //элементами из заданного диапазона
         {
-            if(n < 0) throw new Exception("Размер матрицы не может быть отрицательным");
-            if(max<min) throw new Exception(
-                "Максимальное значение элемента не может быть меньше минимального");
+            if (n < 0) throw new Exception("Размер матрицы не может быть отрицательным");
+            if (max < min) throw new Exception(
+                   "Максимальное значение элемента не может быть меньше минимального");
             if (n == 0) return new int[0, 0];
             int[,] A = new int[n, n];
             Random random = new Random();
@@ -130,18 +128,18 @@ namespace ClassWork1210
             }
             return A;
         }
-		
-		static int[,] GetIntSquareMatrix(int n)
+
+        static int[,] GetIntSquareMatrix(int n)
         //Получение квадратной матрицы порядка n
         {
-            if(n < 0) throw new Exception("Размер матрицы не может быть отрицательным");
+            if (n < 0) throw new Exception("Размер матрицы не может быть отрицательным");
             if (n == 0) return new int[0, 0];
             int[,] A = new int[n, n];
             for (int i = 0; i < n; i++)
             {
-				Сonsole.WriteLine($"Строка №{i + 1}");
+                Console.WriteLine($"Строка №{i + 1}");
                 for (int j = 0; j < n; j++)
-                    A[i, j] = GetInt("Введите целочисленное значение элемента №{j + 1}");
+                    A[i, j] = GetInt($"Введите целочисленное значение элемента №{j + 1}");
             }
             return A;
         }
@@ -150,48 +148,48 @@ namespace ClassWork1210
         {
             Console.WriteLine(
                 "Задание 7.\nВывести последовательность чисел, используя рекурсию");
-            int n = GetInt("Введите количество чисел > 3", min:3);
+            int n = GetInt("Введите количество чисел > 3", min: 3);
             double a1 = GetDouble("Введите действительное число а1: ");
             double a2 = GetDouble("Введите действительное число а2: ");
             double a3 = GetDouble("Введите действительное число а3: ");
             Console.WriteLine($"Вывод последовательности из {n} чисел начиная с четвертого");
-            Print_n_Numbers(a1, a2, a3, n);
+            Print_n_Numbers(a1, a2, a3, n, n);
             double a4 = GetNextNumber(a1, a2, a3);
-            double m = GetDouble($"Введите действительное число m > {a4}," 
+            double m = GetDouble($"Введите действительное число m > {a4},"
                 + "для ограничения значения очередного числа по модулю");
             Console.WriteLine($"Вывод последовательности чисел не превышающих по модулю {m}");
             int j = PrintNumbersLessThan_M(a1, a2, a3, m);
             Console.WriteLine(
-                $"Последовательность длиной j = {j}, j {GetResultOfCompare(j,n)} n");
+                $"Последовательность длиной j = {j}, j {GetResultOfCompare(j, n)} n");
         }
 
         static string GetResultOfCompare(int a, int b)
         //Возвращает в виде строки результат сравнения двух чисел 
         {
             string result = "";
-            if (a == b) result = "равно";
-            result = a > b ?  "больше" : "меньше";
+            result = a > b ? "больше" : "меньше";
+			if (a == b) result = "равно";
             return result;
         }
-       
+
         static double GetNextNumber(double a1, double a2, double a3)
         //Получение очередного числа последовательности
         {
-            return 3 / 2.0 * a3 - 2 / 3.0 * a2 - 1 / 3.0 * a1;
+            return (3 / 2.0) * a3 - (2 / 3.0) * a2 - (1 / 3.0) * a1;
         }
 
-        static void Print_n_Numbers(double a1, double a2, double a3, int n)
+        static void Print_n_Numbers(double a1, double a2, double a3, int n, int quantity)
         //Вывод заданного количества членов последовательности
         {
-            if(n > 3)
+            if (n > 3)
             {
                 double currentNumber = GetNextNumber(a1, a2, a3);
-                Console.WriteLine(currentNumber);
-                Print_n_Numbers(a2, a3, currentNumber, n - 1);
+                Console.WriteLine($"[{quantity - n + 4,2}]" + currentNumber);
+                Print_n_Numbers(a2, a3, currentNumber, n - 1, quantity);
             }
         }
 
-        static int PrintNumbersLessThan_M(double a1, double a2, double a3, 
+        static int PrintNumbersLessThan_M(double a1, double a2, double a3,
             double m, int count = 3)
         //Вывод последовательности чисел, не превышающих по модулю заданное
         //Возвращает количество чисел
@@ -201,7 +199,7 @@ namespace ClassWork1210
 
             if (Math.Abs(currentNumber) <= m)
             {
-                Console.WriteLine($"[{j}] {currentNumber}");
+                Console.WriteLine($"[{j,2}] {currentNumber}");
                 j = PrintNumbersLessThan_M(a2, a3, currentNumber, m, count: j);
             }
             else
@@ -226,7 +224,7 @@ namespace ClassWork1210
                 input = Console.ReadLine();
             } while (input != "N");
         }
-               
+
         static int GetInt(string invite, int min = int.MinValue,
             int max = int.MaxValue)
         //Получение целого числа в заданном диапазоне с консоли
@@ -246,7 +244,7 @@ namespace ClassWork1210
                 if (x <= min)
                 {
                     Console.WriteLine(
-                        $"Ошибка ввода! Введено число меньше допустимого значения {min}");
+                        $"Ошибка ввода! Введено число меньше допустимого значения {min+1}");
                     continue;
                 }
                 if (x > max)
@@ -260,7 +258,7 @@ namespace ClassWork1210
             return x;
         }
 
-        static double GetDouble(string invite, double min = Double.MinValue, 
+        static double GetDouble(string invite, double min = Double.MinValue,
             double max = Double.MaxValue)
         //Получение действительного числа в заданном диапазоне с консоли
         //min не включается
@@ -293,6 +291,5 @@ namespace ClassWork1210
             }
             return x;
         }
-
     }
 }

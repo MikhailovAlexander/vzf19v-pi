@@ -17,6 +17,7 @@ namespace ConsoleApplication7
         }
 
         static void TaskLoop(SomeTask func,string name, string definition)
+		//Зацикливание выполнения задания
         {
             string input="";
             Console.WriteLine("\n"+name+"\n"+ definition);
