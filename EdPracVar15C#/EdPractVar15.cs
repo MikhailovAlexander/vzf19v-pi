@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ClassWork1210
+namespace EdPractVar15
 {
     class Program
     {
@@ -12,10 +12,10 @@ namespace ClassWork1210
 
             func = EdPracTask2;
             TaskLoop(func, "Задание 2", "Приближенное вычисление корня");
-            
+
             func = EdPracTask3;
             TaskLoop(func, "Задание 3", "Работа с матрицами");
-            
+
             func = EdPracTask4;
             TaskLoop(func, "Задание 4", "Рекурсия");
         }
@@ -37,7 +37,7 @@ namespace ClassWork1210
             Console.WriteLine(
                 $"Точка с указанными координатами{answer} входит в заданную область, u = {u}");
         }
-        
+
         static void EdPracTask2()
         {
             string f = "(4 + x^2)(e^x - e^-x) = 18";
@@ -155,12 +155,19 @@ namespace ClassWork1210
             Console.WriteLine($"Вывод последовательности из {n} чисел начиная с четвертого");
             Print_n_Numbers(a1, a2, a3, n, n);
             double a4 = GetNextNumber(a1, a2, a3);
-            double m = GetDouble($"Введите действительное число m > {a4},"
-                + "для ограничения значения очередного числа по модулю");
+            double m = GetDouble($"Введите действительное число m > {Math.Abs(a4)}, "
+                + "для ограничения значения очередного числа по модулю", min: Math.Abs(a4));
             Console.WriteLine($"Вывод последовательности чисел не превышающих по модулю {m}");
-            int j = PrintNumbersLessThan_M(a1, a2, a3, m);
-            Console.WriteLine(
-                $"Последовательность длиной j = {j}, j {GetResultOfCompare(j, n)} n");
+            try
+            {
+                int j = PrintNumbersLessThan_M(a1, a2, a3, m);
+                Console.WriteLine(
+                    $"Последовательность длиной j = {j}, j {GetResultOfCompare(j, n)} n");
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Ошибка! " + ex.Message);
+            }
         }
 
         static string GetResultOfCompare(int a, int b)
@@ -168,7 +175,7 @@ namespace ClassWork1210
         {
             string result = "";
             result = a > b ? "больше" : "меньше";
-			if (a == b) result = "равно";
+            if (a == b) result = "равно";
             return result;
         }
 
@@ -194,13 +201,19 @@ namespace ClassWork1210
         //Вывод последовательности чисел, не превышающих по модулю заданное
         //Возвращает количество чисел
         {
+            if (a1 == 0 && a2 == 0 && a3 == 0)
+                throw new Exception("Вывод последовательности невозможен, числа а1, а2, а3 равны 0");
             double currentNumber = GetNextNumber(a1, a2, a3);
             int j = count + 1;
 
-            if (Math.Abs(currentNumber) <= m)
+            if (Math.Abs(currentNumber) < m)
             {
                 Console.WriteLine($"[{j,2}] {currentNumber}");
                 j = PrintNumbersLessThan_M(a2, a3, currentNumber, m, count: j);
+            }
+            else if (Math.Abs(currentNumber) == m)
+            {
+                Console.WriteLine($"Очередное число [{j,2}] |{currentNumber}| = m");
             }
             else
             {
@@ -244,7 +257,7 @@ namespace ClassWork1210
                 if (x <= min)
                 {
                     Console.WriteLine(
-                        $"Ошибка ввода! Введено число меньше допустимого значения {min+1}");
+                        $"Ошибка ввода! Введено число меньше допустимого значения {min + 1}");
                     continue;
                 }
                 if (x > max)
