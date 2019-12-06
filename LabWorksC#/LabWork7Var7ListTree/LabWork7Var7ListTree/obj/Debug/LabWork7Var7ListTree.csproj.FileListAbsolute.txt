@@ -1,0 +1,7 @@
+C:\Users\vestr\source\repos\LabWork7Var7ListTree\LabWork7Var7ListTree\bin\Debug\LabWork7Var7ListTree.exe.config
+C:\Users\vestr\source\repos\LabWork7Var7ListTree\LabWork7Var7ListTree\bin\Debug\LabWork7Var7ListTree.exe
+C:\Users\vestr\source\repos\LabWork7Var7ListTree\LabWork7Var7ListTree\bin\Debug\LabWork7Var7ListTree.pdb
+C:\Users\vestr\source\repos\LabWork7Var7ListTree\LabWork7Var7ListTree\obj\Debug\LabWork7Var7ListTree.csprojAssemblyReference.cache
+C:\Users\vestr\source\repos\LabWork7Var7ListTree\LabWork7Var7ListTree\obj\Debug\LabWork7Var7ListTree.csproj.CoreCompileInputs.cache
+C:\Users\vestr\source\repos\LabWork7Var7ListTree\LabWork7Var7ListTree\obj\Debug\LabWork7Var7ListTree.exe
+C:\Users\vestr\source\repos\LabWork7Var7ListTree\LabWork7Var7ListTree\obj\Debug\LabWork7Var7ListTree.pdb
