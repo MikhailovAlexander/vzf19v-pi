@@ -274,7 +274,7 @@ namespace EdPractVar15
         static double GetDouble(string invite, double min = Double.MinValue,
             double max = Double.MaxValue)
         //Получение действительного числа в заданном диапазоне с консоли
-        //min не включается
+        //min, max не включается
         {
             double x = 0;
             string input = "";
@@ -294,10 +294,10 @@ namespace EdPractVar15
                         $"Ошибка ввода! Введено число <= допустимого значения {min}");
                     continue;
                 }
-                if (x > max)
+                if (x >= max)
                 {
                     Console.WriteLine(
-                        $"Ошибка ввода! Введено число больше допустимого значения {max}");
+                        $"Ошибка ввода! Введено число >= допустимого значения {max}");
                     continue;
                 }
                 isChecked = true;
