@@ -8,32 +8,19 @@ namespace WorkPractVar15
 {
     class ArraySortMethods
     {
+        public static int compareCount;
+        public static int moveCount;
+
+        public static void ClearCount()
+        {
+            compareCount = 0;
+            moveCount = 0;
+        }
 
         public static int[] MergeSort(int[] array)
         {
+            ClearCount();
             return MergeSort(array, 0, array.Length - 1);
-        }
-
-        private static void Merge(int[] array, int leftBound, int middle, int rigthBound)
-        {
-            int currentLeft = leftBound;
-            int currentRight = middle + 1;
-            int[] tempArray = new int[rigthBound - leftBound + 1];
-            int index = 0;
-
-            while ((currentLeft <= middle) && (currentRight <= rigthBound))
-            {
-                tempArray[index++] = array[currentLeft] < array[currentRight] ?
-                    array[currentLeft++] : array[currentRight++];
-            }
-        
-            if (currentLeft <= middle)
-                Array.Copy(array, currentLeft, tempArray, index, middle - currentLeft + 1);
-
-            if (currentRight <= rigthBound)
-                Array.Copy(array, currentRight, tempArray, index, rigthBound - currentRight +1);
-
-            Array.Copy(tempArray, 0, array, leftBound, rigthBound - leftBound + 1);
         }
 
         private static int[] MergeSort(int[] array, int leftBound, int rigthBound)
@@ -48,19 +35,45 @@ namespace WorkPractVar15
             return array;
         }
 
+        private static void Merge(int[] array, int leftBound, int middle, int rigthBound)
+        {
+            int currentLeft = leftBound;
+            int currentRight = middle + 1;
+            int[] tempArray = new int[rigthBound - leftBound + 1];
+            int index = 0;
+
+            while ((currentLeft <= middle) && (currentRight <= rigthBound))
+            {
+                tempArray[index++] = array[currentLeft] < array[currentRight] ?
+                    array[currentLeft++] : array[currentRight++];
+                compareCount++;
+                moveCount++;
+            }
+
+            moveCount += middle - currentLeft + 1;
+            if (currentLeft <= middle)
+                Array.Copy(array, currentLeft, tempArray, index, middle - currentLeft + 1);
+
+            moveCount += rigthBound - currentRight + 1;
+            if (currentRight <= rigthBound)
+                Array.Copy(array, currentRight, tempArray, index, rigthBound - currentRight +1);
+            moveCount += rigthBound - leftBound + 1;
+            Array.Copy(tempArray, 0, array, leftBound, rigthBound - leftBound + 1);
+        }
+
         public static int[] BlockSort(int[] array, int numberOfBlock, bool debug = false)
         {
+            ClearCount();
             if (array == null || array.Length < 2)
                 return array;
-            if (array.Length < numberOfBlock)
-                throw new Exception(
-                    "Количество блоков не может быть больше количества элементов");
             int min = int.MaxValue;
             int max = int.MinValue;
             foreach(int value in array)
             {
                 if (value < min) min = value;
+                compareCount++;
                 if (value > max) max = value;
+                compareCount++;
             }
             int range = max - min;
             if (range == 0) return array;
@@ -72,7 +85,8 @@ namespace WorkPractVar15
             for(int i = 0; i < array.Length; i++)
             {
                 number = ((array[i] - min) * (numberOfBlock - 1)) / range;
-                blocks[number].InsertInOrder(array[i]);
+                compareCount += blocks[number].InsertInOrder(array[i]);
+                moveCount++;
             }
              return MergeBlocks(blocks, array, debug);
         }
@@ -86,6 +100,7 @@ namespace WorkPractVar15
                 while(index < array.Length && !block.IsEmpty)
                 {
                     array[index++] = block.Top();
+                    moveCount++;
                     if (debug) Console.Write(array[index - 1] + " ");
                 }
                 if (index >= array.Length && !block.IsEmpty)

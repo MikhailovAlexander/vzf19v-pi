@@ -16,16 +16,20 @@ namespace WorkPractVar15
 
             func = TestMergeSort;
             TaskLoop(func, "Задание 2", "Сортировка целочисленного массива слиянием");
+
+            Console.WriteLine("Оценка количества сравнений и пересылок при сортировке");
+            TestSort();
         }
 
         static void TestBlockSort()
         {
             int[] array = GetArray();
             int numberOfBlocks = GetInt(
-                $"Введите количество блоков для сортировки от 1 до {array.Length}",
-                min: 0, max: array.Length);
+                $"Введите количество блоков для сортировки",
+                min: 0);
             array = ArraySortMethods.BlockSort(array, numberOfBlocks, debug: false);
             PrintArray(array);
+            PrintCounters(String.Empty);
         }
 
         static void TestMergeSort()
@@ -33,6 +37,71 @@ namespace WorkPractVar15
             int[] array = GetArray();
             Console.WriteLine("Отсортированный массив");
             PrintArray(ArraySortMethods.MergeSort(array));
+            PrintCounters(String.Empty);
+        }
+
+        static void TestSort()
+        {
+            int[] array = new int[1000];
+            Random rnd = new Random();
+            for (int i = 0; i < array.Length; i++)
+                array[i] = i;
+
+            array = ArraySortMethods.BlockSort(array, 100, debug: false);
+            PrintCounters(
+                "Блочная сортировка упорядоченного массива из 1000 единиц, 100 блоков: ");
+
+            Array.Reverse(array);
+            array = ArraySortMethods.BlockSort(array, 100, debug: false);
+            PrintCounters(
+                "Блочная сортировка обратно упорядоченного массива из 1000 единиц, 100 блоков: ");
+
+            for (int i = 0; i < array.Length; i++)
+                array[i] = rnd.Next(0, 1000);
+            array = ArraySortMethods.BlockSort(array, 100, debug: false);
+            PrintCounters(
+                "Блочная сортировка неупорядоченного массива из 1000 единиц, 100 блоков: ");
+
+            for (int i = 0; i < array.Length; i++)
+                array[i] = i;
+            array = ArraySortMethods.BlockSort(array, 1000, debug: false);
+            PrintCounters(
+                "Блочная сортировка упорядоченного массива из 1000 единиц, 1000 блоков: ");
+
+            Array.Reverse(array);
+            array = ArraySortMethods.BlockSort(array, 1000, debug: false);
+            PrintCounters(
+                "Блочная сортировка обратно упорядоченного массива из 1000 единиц, 1000 блоков: ");
+
+            for (int i = 0; i < array.Length; i++)
+                array[i] = rnd.Next(0, 1000);
+            array = ArraySortMethods.BlockSort(array, 1000, debug: false);
+            PrintCounters(
+                "Блочная сортировка неупорядоченного массива из 1000 единиц, 1000 блоков: ");
+
+            for (int i = 0; i < array.Length; i++)
+                array[i] = i;
+            array = ArraySortMethods.MergeSort(array);
+            PrintCounters(
+                "Сортировка слиянием упорядоченного массива из 1000 единиц: ");
+
+            Array.Reverse(array);
+            array = ArraySortMethods.MergeSort(array);
+            PrintCounters(
+                "Сортировка слиянием обратно упорядоченного массива из 1000 единиц: ");
+
+            for (int i = 0; i < array.Length; i++)
+                array[i] = rnd.Next(0, 1000);
+            array = ArraySortMethods.MergeSort(array);
+            PrintCounters(
+                "Сортировка слиянием неупорядоченного массива из 1000 единиц: ");
+        }
+
+        static void PrintCounters(string definition)
+        {
+            Console.WriteLine(definition +
+                $"\n\tколичество сравнений: {ArraySortMethods.compareCount}, " +
+                $"\n\tколичество пересылок: {ArraySortMethods.moveCount}");
         }
 
         static int[] GetArray()

@@ -17,24 +17,27 @@ namespace WorkPractVar15
             head = null;
         }
 
-        public void InsertInOrder(int value)
+        public int InsertInOrder(int value)
         {
+            int compareCount = 0;
             if (IsEmpty)
             {
                 head = new NodeInt(value);
-                return;
+                return 1;
             }
             if (value <= head.Value)
             {
                 head = new NodeInt(value, head);
-                return;
+                return 1;
             }
             NodeInt currentNode = head;
             while (currentNode.Next != null && value > currentNode.Next.Value)
             {
                 currentNode = currentNode.Next;
+                compareCount++;
             }
             currentNode.Next = new NodeInt(value, currentNode.Next);
+            return compareCount;
         }
 
         public int Top()
