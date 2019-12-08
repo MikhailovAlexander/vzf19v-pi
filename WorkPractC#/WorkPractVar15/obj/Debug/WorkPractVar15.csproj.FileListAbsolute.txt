@@ -1,0 +1,7 @@
+C:\Users\vestr\source\repos\WorkPractVar15\WorkPractVar15\bin\Debug\WorkPractVar15.exe.config
+C:\Users\vestr\source\repos\WorkPractVar15\WorkPractVar15\bin\Debug\WorkPractVar15.exe
+C:\Users\vestr\source\repos\WorkPractVar15\WorkPractVar15\bin\Debug\WorkPractVar15.pdb
+C:\Users\vestr\source\repos\WorkPractVar15\WorkPractVar15\obj\Debug\WorkPractVar15.csprojAssemblyReference.cache
+C:\Users\vestr\source\repos\WorkPractVar15\WorkPractVar15\obj\Debug\WorkPractVar15.csproj.CoreCompileInputs.cache
+C:\Users\vestr\source\repos\WorkPractVar15\WorkPractVar15\obj\Debug\WorkPractVar15.exe
+C:\Users\vestr\source\repos\WorkPractVar15\WorkPractVar15\obj\Debug\WorkPractVar15.pdb
