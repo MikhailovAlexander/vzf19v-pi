@@ -43,11 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LabMethods.cs" />
+    <Compile Include="BiLinkedListInt.cs" />
+    <Compile Include="BiLinkedListIntMenu.cs" />
+    <Compile Include="BiNodeInt.cs" />
     <Compile Include="LinkedListDouble.cs" />
+    <Compile Include="LinkedListDoubleMenu.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="NodeDouble.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TreePrinter.cs" />
+    <Compile Include="TreeString.cs" />
+    <Compile Include="TreeStringMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
