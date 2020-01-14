@@ -1,0 +1,7 @@
+C:\Users\vestr\source\repos\ClassWork1210\LabWorks\bin\Debug\LabWorks.exe.config
+C:\Users\vestr\source\repos\ClassWork1210\LabWorks\bin\Debug\LabWorks.exe
+C:\Users\vestr\source\repos\ClassWork1210\LabWorks\bin\Debug\LabWorks.pdb
+C:\Users\vestr\source\repos\ClassWork1210\LabWorks\obj\Debug\LabWorks.csproj.CoreCompileInputs.cache
+C:\Users\vestr\source\repos\ClassWork1210\LabWorks\obj\Debug\LabWorks.exe
+C:\Users\vestr\source\repos\ClassWork1210\LabWorks\obj\Debug\LabWorks.pdb
+C:\Users\vestr\source\repos\ClassWork1210\LabWorks\obj\Debug\LabWorks.csprojAssemblyReference.cache
