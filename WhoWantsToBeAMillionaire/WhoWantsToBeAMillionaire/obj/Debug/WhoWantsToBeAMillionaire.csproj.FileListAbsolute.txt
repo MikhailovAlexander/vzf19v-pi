@@ -1,0 +1,12 @@
+C:\Users\vestr\source\repos\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\Debug\WhoWantsToBeAMillionaire.exe.config
+C:\Users\vestr\source\repos\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\Debug\WhoWantsToBeAMillionaire.exe
+C:\Users\vestr\source\repos\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\Debug\WhoWantsToBeAMillionaire.pdb
+C:\Users\vestr\source\repos\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\obj\Debug\WhoWantsToBeAMillionaire.csprojAssemblyReference.cache
+C:\Users\vestr\source\repos\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\obj\Debug\WhoWantsToBeAMillionaire.Form1.resources
+C:\Users\vestr\source\repos\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\obj\Debug\WhoWantsToBeAMillionaire.Properties.Resources.resources
+C:\Users\vestr\source\repos\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\obj\Debug\WhoWantsToBeAMillionaire.csproj.GenerateResource.cache
+C:\Users\vestr\source\repos\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\obj\Debug\WhoWantsToBeAMillionaire.csproj.CoreCompileInputs.cache
+C:\Users\vestr\source\repos\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\obj\Debug\WhoWantsToBeAMillionaire.exe
+C:\Users\vestr\source\repos\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\obj\Debug\WhoWantsToBeAMillionaire.pdb
+C:\Users\vestr\source\repos\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\obj\Debug\WhoWantsToBeAMillionaire.FormFriends.resources
+C:\Users\vestr\source\repos\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\obj\Debug\WhoWantsToBeAMillionaire.FormCallFriend.resources
