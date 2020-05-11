@@ -1,0 +1,13 @@
+C:\Users\vestr\source\repos\Constr0805\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\vestr\source\repos\Constr0805\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\vestr\source\repos\Constr0805\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\vestr\source\repos\Constr0805\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\vestr\source\repos\Constr0805\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\vestr\source\repos\Constr0805\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\vestr\source\repos\Constr0805\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\vestr\source\repos\Constr0805\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\vestr\source\repos\Constr0805\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\vestr\source\repos\Constr0805\WindowsFormsApp1\bin\Debug\Constr0805.dll
+C:\Users\vestr\source\repos\Constr0805\WindowsFormsApp1\bin\Debug\Constr0805.pdb
+C:\Users\vestr\source\repos\Constr0805\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+C:\Users\vestr\source\repos\Constr0805\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources

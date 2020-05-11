@@ -1,0 +1,9 @@
+C:\Users\vestr\source\repos\Constr0805\Constr0805\bin\Debug\Constr0805.dll
+C:\Users\vestr\source\repos\Constr0805\Constr0805\bin\Debug\Constr0805.pdb
+C:\Users\vestr\source\repos\Constr0805\Constr0805\obj\Debug\Constr0805.csprojAssemblyReference.cache
+C:\Users\vestr\source\repos\Constr0805\Constr0805\obj\Debug\Constr0805.csproj.CoreCompileInputs.cache
+C:\Users\vestr\source\repos\Constr0805\Constr0805\obj\Debug\Constr0805.dll
+C:\Users\vestr\source\repos\Constr0805\Constr0805\obj\Debug\Constr0805.pdb
+C:\Users\vestr\source\repos\Constr0805\Constr0805\obj\Debug\Constr0805.FilePathControl.resources
+C:\Users\vestr\source\repos\Constr0805\Constr0805\obj\Debug\Constr0805.csproj.GenerateResource.cache
+C:\Users\vestr\source\repos\Constr0805\Constr0805\obj\Debug\Constr0805.ColorCodeControl.resources
