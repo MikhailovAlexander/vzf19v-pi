@@ -26,5 +26,15 @@ namespace WindowsFormsApp1
         {
             MessageBox.Show(filePathControl1.FileName);
         }
+
+        private void colorCodeControl1_ColorChanged(object sender, EventArgs e)
+        {
+            circleControl2.Color = colorCodeControl1.Color;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            codeColorTextBox1.SetHex();
+        }
     }
 }

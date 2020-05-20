@@ -48,6 +48,12 @@
     <Compile Include="CircleControl.Designer.cs">
       <DependentUpon>CircleControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CodeColorTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CodeColorTextBox.Designer.cs">
+      <DependentUpon>CodeColorTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="ColorCodeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

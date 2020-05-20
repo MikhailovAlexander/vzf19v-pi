@@ -30,13 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
+            this.colorCodeControl1 = new Constr0805.ColorCodeControl(this.components);
+            this.circleControl2 = new Constr0805.CircleControl(this.components);
             this.circleControl1 = new Constr0805.CircleControl(this.components);
             this.filePathControl2 = new Constr0805.FilePathControl();
             this.filePathControl1 = new Constr0805.FilePathControl();
             this.numberTextBox3 = new Constr0805.NumberTextBox(this.components);
             this.numberTextBox2 = new Constr0805.NumberTextBox(this.components);
             this.numberTextBox1 = new Constr0805.NumberTextBox(this.components);
-            this.circleControl2 = new Constr0805.CircleControl(this.components);
+            this.codeColorTextBox1 = new Constr0805.CodeColorTextBox(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -48,6 +51,25 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // colorCodeControl1
+            // 
+            this.colorCodeControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colorCodeControl1.Location = new System.Drawing.Point(3, 2);
+            this.colorCodeControl1.MinimumSize = new System.Drawing.Size(250, 170);
+            this.colorCodeControl1.Name = "colorCodeControl1";
+            this.colorCodeControl1.Size = new System.Drawing.Size(250, 170);
+            this.colorCodeControl1.TabIndex = 8;
+            this.colorCodeControl1.ColorChanged += new System.EventHandler<System.EventArgs>(this.colorCodeControl1_ColorChanged);
+            // 
+            // circleControl2
+            // 
+            this.circleControl2.Color = System.Drawing.Color.Red;
+            this.circleControl2.Location = new System.Drawing.Point(381, 259);
+            this.circleControl2.Name = "circleControl2";
+            this.circleControl2.Size = new System.Drawing.Size(75, 59);
+            this.circleControl2.TabIndex = 7;
+            this.circleControl2.Text = "circleControl2";
             // 
             // circleControl1
             // 
@@ -99,20 +121,32 @@
             this.numberTextBox1.Size = new System.Drawing.Size(100, 22);
             this.numberTextBox1.TabIndex = 0;
             // 
-            // circleControl2
+            // codeColorTextBox1
             // 
-            this.circleControl2.Color = System.Drawing.Color.Red;
-            this.circleControl2.Location = new System.Drawing.Point(381, 259);
-            this.circleControl2.Name = "circleControl2";
-            this.circleControl2.Size = new System.Drawing.Size(75, 59);
-            this.circleControl2.TabIndex = 7;
-            this.circleControl2.Text = "circleControl2";
+            this.codeColorTextBox1.ColorCode = 0;
+            this.codeColorTextBox1.Location = new System.Drawing.Point(3, 316);
+            this.codeColorTextBox1.Name = "codeColorTextBox1";
+            this.codeColorTextBox1.Size = new System.Drawing.Size(100, 22);
+            this.codeColorTextBox1.TabIndex = 9;
+            this.codeColorTextBox1.Text = "0";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(3, 274);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(80, 36);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.colorCodeControl1);
             this.Controls.Add(this.circleControl2);
             this.Controls.Add(this.circleControl1);
             this.Controls.Add(this.button1);
@@ -121,6 +155,7 @@
             this.Controls.Add(this.numberTextBox3);
             this.Controls.Add(this.numberTextBox2);
             this.Controls.Add(this.numberTextBox1);
+            this.Controls.Add(this.codeColorTextBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -138,6 +173,9 @@
         private System.Windows.Forms.Button button1;
         private Constr0805.CircleControl circleControl1;
         private Constr0805.CircleControl circleControl2;
+        private Constr0805.ColorCodeControl colorCodeControl1;
+        private Constr0805.CodeColorTextBox codeColorTextBox1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

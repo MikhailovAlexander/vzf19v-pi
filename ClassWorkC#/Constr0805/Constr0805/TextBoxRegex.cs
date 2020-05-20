@@ -12,13 +12,23 @@ namespace Constr0805
 {
     public partial class TextBoxRegex : TextBox
     {
+        private Regex pattern;
         public event EventHandler<EventArgs> RegexCheckFailed;
         public event EventHandler<EventArgs> RegexChecked;
-        public Regex Pattern { get; set; } 
+        public Regex Pattern
+        {
+            get { return pattern; }
+            set
+            {
+                pattern = value;
+                OnTextChanged(new EventArgs());
+            }
+        }
+        public bool Check => Checked();
         public TextBoxRegex()
         {
             InitializeComponent();
-            Pattern = new Regex(".*");
+            pattern = new Regex(".*");
         }
 
         public TextBoxRegex(IContainer container)
@@ -28,24 +38,30 @@ namespace Constr0805
             InitializeComponent();
         }
 
-        protected void OnRegexCheckFailed()
+        protected void OnRegexCheckFailed(EventArgs e)
         {
             if (RegexCheckFailed != null)
-                RegexCheckFailed(this, new EventArgs());
+                RegexCheckFailed(this, e);
         }
 
-        protected void OnRegexChecked()
+        protected void OnRegexChecked(EventArgs e)
         {
             if (RegexCheckFailed != null)
-                RegexChecked(this, new EventArgs());
+                RegexChecked(this, e);
         }
 
         protected override void OnTextChanged(EventArgs e)
         {
             base.OnTextChanged(e);
-            if (Pattern.IsMatch(this.Text))
-                OnRegexChecked();
-            else OnRegexCheckFailed();
+            if (pattern.IsMatch(this.Text))
+                OnRegexChecked(e);
+            else OnRegexCheckFailed(e);
+        }
+
+        private bool Checked()
+        {
+            if (this.Text != null) return pattern.IsMatch(this.Text);
+            return false;
         }
     }
 }
